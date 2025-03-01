@@ -28,3 +28,13 @@ cargar el geoJSOn con leaflet (crear función asincrónica) async usando await
 
 Crear un botón y asignarle un manejador de eventos 
 
+## Problema 6
+dónde conseguir árboles de la ciudad https://datosabiertos.bogota.gov.co/dataset/censo-arbolado-urbano
+recortar los árboles del barrio 
+
+## Problema 7
+crear el bbox de mi barro 
+
+## Problema 8 
+descargar los datos filtrados desde la API (Servicio REST) get y post 
+
