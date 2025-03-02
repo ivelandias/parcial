@@ -91,7 +91,7 @@ btnDistance.addEventListener('click',
             let documentPDF= new jsPDF();
 
             documentPDF.text("REPORTE DE ÁRBOLES EN EL BARRIO TIMIZA", 10,10)
-            
+           
             documentPDF.autoTable (
                 {
                 head: [['Árbol 1', 'Árbol 2', 'Distance']],
@@ -114,11 +114,9 @@ btnIncidentes.addEventListener('click',
                 pointToLayer: (feature, latlong)=>{
 
                     return L.circleMarker(latlong, {
-                        radius:3,
+                        radius:5,
                         fillColor:'red',
-                        weight:1,
-                        opacity:0,
-                        fillOpacity: 0.5,
+                        weight: 1,
                     })
 
                 }
