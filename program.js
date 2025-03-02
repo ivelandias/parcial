@@ -19,19 +19,27 @@ async function loadPolygon (){
 
 loadPolygon();
 
-async function loadPoints (){
-    let myData = await fetch('arboles_timiza.geojson');
-    let myPolygon = await myData.json();
-    L.geoJSON(myPolygon, 
-        {
-            style: {
-                color: 'blue'
-            }
-        }
-    ).addTo(map);
-}
 
-loadPolygon();
 
 let btnTrees = document.getElementById('btnTrees');
-btnTrees.addEventListener('click', ()=>alert("Hola"));
+btnTrees.addEventListener('click', 
+    async ()=> {
+        let response= await fetch("arboles_timiza.geojson");
+        let datos=await response.json();
+        //Agregar la capa al mapa
+
+        L.geoJSON(
+            datos,
+            {
+                pointToLayer: (feature, latlong)=>{
+
+                    return L.circleMarker(latlong,{
+                        radius:5,
+                        fillColor:'green',
+                        weight: 1
+                    })
+
+                }
+            }
+        ).addTo(map)
+    })
